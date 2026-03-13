@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./page/home";
 import ServicePage from "./page/servicesPage";
 import Consultation from "./page/consultation";
-import Footer from "./components/footer";
 import BlogPage from "./page/blog";
 import "./App.css";
 import Contact from "./page/contact";

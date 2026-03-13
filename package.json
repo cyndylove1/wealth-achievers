@@ -16,6 +16,7 @@
     "@mui/material": "^7.3.9",
     "@mui/styled-engine-sc": "^7.3.9",
     "@tailwindcss/vite": "^4.2.1",
+    "@types/swiper": "^5.4.3",
     "lucide-react": "^0.577.0",
     "motion": "^12.35.2",
     "react": "^19.2.0",

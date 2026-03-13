@@ -1,5 +1,5 @@
 import React from "react";
-import { Briefcase, Rocket, ShieldCheck, ChevronRight } from "lucide-react";
+import { Briefcase, Rocket, ShieldCheck } from "lucide-react";
 import Newsletter from "../../components/newsletter";
 import Banner from "../../components/banner";
 import Navbar from "../../components/navbar";

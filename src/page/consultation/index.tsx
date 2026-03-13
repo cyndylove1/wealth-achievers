@@ -1,8 +1,6 @@
 import React, { useState, type ChangeEvent, type FormEvent } from "react";
 import Banner from "../../components/banner";
 import Navbar from "../../components/navbar";
-import Label from "../../components/label";
-import Input from "../../components/input";
 import consult from "../../assets/images/hero.jpg"
 import CustomInput from "../../components/input";
 import CustomSelect from "../../components/selectTag";
