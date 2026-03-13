@@ -8,7 +8,7 @@ import woman2 from "../assets/images/black-woman3.png";
 import man1 from "../assets/images/black-man1.png";
 import man2 from "../assets/images/black-man2.png";
 import couple from "../assets/images/smiling-couple.png";
-import { AnimatedItem } from "../components/animatedItem";
+import { AnimatedItem } from "./animatedItem";
 import Title from "./title";
 
 type Testimonial = {
