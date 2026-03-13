@@ -11,7 +11,7 @@ export default function About() {
           <div className="absolute xl:left-16 lg:left-6 left-2 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
 
           {/* Image container */}
-          <div className="overflow-hidden rounded-t-full rounded-b-lg w-full h-[420px] relative z-10 shadow-lg">
+          <div className="overflow-hidden rounded-t-full rounded-b-lg lg:w-[400px] w-full h-[420px] relative z-10 shadow-lg">
             <img
               src="https://images.unsplash.com/photo-1609220136736-443140cffec6"
               alt="family"

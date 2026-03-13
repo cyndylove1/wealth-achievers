@@ -3,6 +3,7 @@ import hero from "../assets/images/firm5.png";
 import Button from "./button";
 import Navbar from "./navbar";
 import Title from "./title";
+import { AnimatedItem } from "./animatedItem";
 
 export default function Hero() {
   return (
@@ -69,57 +70,66 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto xl:px-10 md:px-6 px-4 grid lg:grid-cols-2 grid-cols-1 items-center pt-12">
         {/* LEFT TEXT */}
         <div>
-          <Title text="Wealth Achievers Your Path to Financial Freedom" />
-
-          <h1 className="xl:text-[52px] md:text-[45px] text-[30px] max-w-2xl font-bold text-gray-900">
-            Welcome to Wealth Achievers Your Path to&nbsp;
-            <span className="relative inline-block">
-              <span className="relative z-10">Financial Freedom</span>
-              <span className="absolute left-0 bottom-1 w-full h-3 bg-(--primary) opacity-40 -z-0"></span>
-            </span>
-          </h1>
-
-          <p className="text-gray-600 mt-6 max-w-lg">
-            At Wealth Achievers, we’re dedicated to helping you achieve
-            financial independence through personalized solutions.
-          </p>
-          <Link to="/consultation">
-            <div className="mt-8">
-              <Button
-                text=" Book Consultation"
-                spanBgColor="bg-white"
-                iconColor="text-(--primary)"
-                bgColor="bg-(--primary)"
-                className="text-white"
-              />
-            </div>
-          </Link>
+          <AnimatedItem index={0} delay={0.05}>
+            <Title text="Wealth Achievers Your Path to Financial Freedom" />
+          </AnimatedItem>
+          <AnimatedItem index={1} delay={0.1}>
+            <h1 className="xl:text-[52px] md:text-[50px] text-[30px] tracking-tight lg:leading-[60px] leading-[40px] max-w-2xl font-bold text-gray-900">
+              Welcome to Wealth Achievers Your Path to&nbsp;
+              <span className="relative inline-block">
+                <span className="relative z-10">Financial Freedom</span>
+                <span className="absolute left-0 bottom-1 w-full h-3 bg-(--primary) opacity-40 -z-0"></span>
+              </span>
+            </h1>
+          </AnimatedItem>
+          <AnimatedItem index={2} delay={0.15}>
+            <p className="text-gray-600 mt-6 max-w-lg">
+              At Wealth Achievers, we’re dedicated to helping you achieve
+              financial independence through personalized solutions.
+            </p>
+          </AnimatedItem>
+          <AnimatedItem index={3} delay={0.25}>
+            <Link to="/consultation">
+              <div className="mt-8">
+                <Button
+                  text=" Book Consultation"
+                  spanBgColor="bg-white"
+                  iconColor="text-(--primary)"
+                  bgColor="bg-(--primary)"
+                  className="text-white"
+                />
+              </div>
+            </Link>
+          </AnimatedItem>
         </div>
 
         {/* RIGHT IMAGE AREA */}
-        <div className="relative flex justify-center mt-20 lg:mt-0">
-          {/* STRIPES */}
+        <AnimatedItem index={4} delay={0.35}>
+          <div className="relative flex justify-center mt-20 lg:mt-0">
+            {/* STRIPES */}
 
-          <div className="absolute xl:left-16 lg:left-6 left-2 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
+            <div className="absolute xl:left-16 lg:left-6 left-2 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
 
-          {/* IMAGE SHAPE (NOT CIRCLE) */}
-          <div className="relative lg:w-[500px] w-full h-[520px] overflow-hidden lg:rounded-t-[250px] rounded-t-[250px] md:rounded-t-[350px] border-[10px] border-white shadow-xl">
-            <img src={hero} className="object-cover w-full h-full" />
-          </div>
-
-          {/* VIDEO CARD */}
-          <div className="absolute bottom-0 w-full mt-10 bg-white shadow-xl rounded-md flex items-center overflow-hidden">
-            <div className="p-4 text-sm text-gray-600">
-              What is a happy family like? Watch this video to her their answer.
+            {/* IMAGE SHAPE (NOT CIRCLE) */}
+            <div className="relative lg:w-[400px] w-full lg:h-[520px] h-[400px] overflow-hidden lg:rounded-t-[250px] rounded-t-[250px] md:rounded-t-[350px] border-[10px] border-white shadow-xl">
+              <img src={hero} className="object-cover w-full h-full" />
             </div>
 
-            <div className="bg-[#2fb08f] w-16 h-16 flex items-center justify-center">
-              <div className="bg-white text-[#2fb08f] w-10 h-10 rounded-full flex items-center justify-center">
-                ▶
+            {/* VIDEO CARD */}
+            <div className="absolute bottom-0 lg:w-[400px] w-full mt-10 bg-white shadow-xl rounded-md flex items-center overflow-hidden">
+              <div className="p-4 text-sm text-gray-600">
+                What is a happy family like? Watch this video to her their
+                answer.
+              </div>
+
+              <div className="bg-[#2fb08f] w-16 h-16 flex items-center justify-center">
+                <div className="bg-white text-[#2fb08f] w-10 h-10 rounded-full flex items-center justify-center">
+                  ▶
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </AnimatedItem>
       </div>
     </section>
   );
