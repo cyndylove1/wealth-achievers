@@ -1,0 +1,15 @@
+#root{
+  --primary: #2fb08f;
+  --secondary: #0b1658;
+}
+
+.dotted-bg {
+  background-color: #eef3f2;
+
+  background-image:
+    radial-gradient(rgba(0,0,0,0.15) 0.8px, transparent 0.8px),
+    radial-gradient(rgba(0,0,0,0.15) 0.8px, transparent 0.8px);
+
+  background-size: 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
