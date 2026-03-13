@@ -3,15 +3,15 @@ import Title from "./title";
 
 export default function About() {
   return (
-    <section className="bg-white py-20 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="bg-white py-20 md:px-6 xl:px-10 px-4">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
         {/* Image Section */}
         <div className="relative flex justify-center">
           {/* Pattern background */}
-          <div className="absolute left-16 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
+          <div className="absolute xl:left-16 lg:left-6 left-2 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
 
           {/* Image container */}
-          <div className="overflow-hidden rounded-t-full rounded-b-lg w-[380px] h-[420px] relative z-10 shadow-lg">
+          <div className="overflow-hidden rounded-t-full rounded-b-lg w-full h-[420px] relative z-10 shadow-lg">
             <img
               src="https://images.unsplash.com/photo-1609220136736-443140cffec6"
               alt="family"
@@ -25,7 +25,7 @@ export default function About() {
           {/* title */}
           <Title text="About" />
 
-          <h2 className="text-3xl font-bold mt-4 leading-snug text-gray-800">
+          <h2 className="md:text-3xl text-2xl font-bold leading-snug text-gray-800">
             A leading financial services platform to&nbsp;
             <span className="relative inline-block">
               <span className="relative z-10">help you</span>

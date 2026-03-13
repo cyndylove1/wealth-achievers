@@ -6,7 +6,7 @@ import Title from "./title";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[700px] dotted-bg overflow-hidden pt-16">
+    <section className="relative w-full h-full dotted-bg overflow-hidden py-16 overflow-hidden">
       {/* RIGHT GREEN BACKGROUND */}
       <div className="absolute right-0 top-0 h-full w-[27%] bg-[#2fb08f] rounded-bl-[500px] overflow-hidden">
         {/* Centered icon container */}
@@ -66,12 +66,12 @@ export default function Hero() {
       />
 
       {/* HERO CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2  items-center pt-12">
+      <div className="relative z-10 max-w-7xl mx-auto xl:px-10 md:px-6 px-4 grid lg:grid-cols-2 grid-cols-1 items-center pt-12">
         {/* LEFT TEXT */}
         <div>
           <Title text="Wealth Achievers Your Path to Financial Freedom" />
 
-          <h1 className="text-[52px] leading-[60px] font-bold text-gray-900">
+          <h1 className="xl:text-[52px] md:text-[45px] text-[30px] max-w-2xl font-bold text-gray-900">
             Welcome to Wealth Achievers Your Path to&nbsp;
             <span className="relative inline-block">
               <span className="relative z-10">Financial Freedom</span>
@@ -97,18 +97,18 @@ export default function Hero() {
         </div>
 
         {/* RIGHT IMAGE AREA */}
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center mt-20 lg:mt-0">
           {/* STRIPES */}
 
-          <div className="absolute left-16 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
+          <div className="absolute xl:left-16 lg:left-6 left-2 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
 
           {/* IMAGE SHAPE (NOT CIRCLE) */}
-          <div className="relative w-[380px] h-[520px] overflow-hidden rounded-t-[200px] border-[10px] border-white shadow-xl">
+          <div className="relative lg:w-[500px] w-full h-[520px] overflow-hidden lg:rounded-t-[250px] rounded-t-[250px] md:rounded-t-[350px] border-[10px] border-white shadow-xl">
             <img src={hero} className="object-cover w-full h-full" />
           </div>
 
           {/* VIDEO CARD */}
-          <div className="absolute bottom-0 w-[380px] mt-10 bg-white shadow-xl rounded-md flex items-center overflow-hidden">
+          <div className="absolute bottom-0 w-full mt-10 bg-white shadow-xl rounded-md flex items-center overflow-hidden">
             <div className="p-4 text-sm text-gray-600">
               What is a happy family like? Watch this video to her their answer.
             </div>

@@ -2,13 +2,13 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-(--secondary) text-white pt-16 pb-8 px-10">
+    <footer className="bg-gradient-to-br from-[#2fb08f] via-[#c3eee7] to-[#2fb08f] text-white pt-16 pb-8 md:px-6 px-4 xl:px-10">
       <div className="max-w-7xl mx-auto flex gap-32 mb-16">
         {/* Brand Column */}
         <div>
           <div className="flex items-center gap-2 mb-6">
-            <div className="w-12 h-12 bg-[#008b82] flex items-center justify-center rounded">
-              <span className="text-2xl font-black">W</span>
+            <div className="w-12 h-12 bg-(--primary) flex items-center justify-center rounded">
+              <span className="text-2xl text-white font-black">W</span>
             </div>
             <div>
               <h2 className="text-xl font-black leading-none">WEALTH</h2>
@@ -17,7 +17,7 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          <p className="text-md leading-relaxed max-w-md">
+          <p className="text-md text-gray-900 leading-relaxed max-w-md">
             Wealth Achievers Is Committed To Making Financial Independence
             Accessible To Everyone.
           </p>
@@ -28,7 +28,7 @@ export default function Footer() {
           <h3 className="text-xl text-(--primary) font-bold mb-6">
             Our Services
           </h3>
-          <ul className="space-y-2 text-md whitespace-nowrap">
+          <ul className="space-y-2 text-gray-900 text-md whitespace-nowrap">
             <li>Insurance Protection</li>
             <li>Retirement Strategies</li>
             <li>Business Strategies</li>
@@ -41,7 +41,7 @@ export default function Footer() {
           <h3 className="text-xl text-(--primary) font-bold mb-6">
             Contact Us
           </h3>
-          <ul className="space-y-2 text-md whitespace-nowrap">
+          <ul className="space-y-2 text-gray-900 text-md whitespace-nowrap">
             <li>9920 Franklin Square Drive Nottingham MD 21236</li>
             <li>+1 (443) 591-0360</li>
             <li>wfgwealthachievers@gmail.com</li>
@@ -49,8 +49,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/20 pt-4 flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex  md:flex-row gap-8 text-xs opacity-70 mb-6 md:mb-0">
+      <div className="border-t border-gray-900/20 pt-4 flex items-center justify-between max-w-7xl mx-auto">
+        <div className="flex  md:flex-row gap-8 text-xs text-gray-900 opacity-70 mb-6 md:mb-0">
           <p>Copyright © 2025 Wealth Achievers</p>
           <p>Website By: NGE Technologies</p>
         </div>

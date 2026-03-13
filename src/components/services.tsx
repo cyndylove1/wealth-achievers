@@ -48,13 +48,13 @@ export default function Services() {
   const primaryColor = "#32b291";
 
   return (
-    <section className="bg-[#eef3f2] py-20 px-6">
+    <section className="bg-[#eef3f2] py-20 md:px-6 xl:px-10 px-4">
       <div className="max-w-6xl mx-auto text-center">
         {/* Badge */}
         <Title text="Our Services" />
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-3xl max-w-2xl mx-auto font-bold mt-4 text-slate-900">
+        <h2 className="text-2xl md:text-3xl max-w-2xl mx-auto font-bold mt-4 text-slate-900">
           We offer personalized financial solutions to help you&nbsp;
           <span className="relative inline-block">
             <span className="relative z-10">achieve your dreams</span>
@@ -66,7 +66,7 @@ export default function Services() {
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-x-8 gap-y-12 mt-20">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-8 gap-y-12 mt-20">
           {services.map((service, index) => (
             <div
               key={index}

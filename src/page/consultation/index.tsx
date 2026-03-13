@@ -76,7 +76,7 @@ const Consultation: React.FC = () => {
         breadcrumbPath="consultation"
       />
 
-      <section className="bg-[#eef3f2] py-16 px-6">
+      <section className="bg-[#eef3f2] py-16 md:px-6 xl:px-10 px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <h3 className="text-(--primary) font-bold text-xl uppercase tracking-wider mb-2">

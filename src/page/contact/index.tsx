@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
           enableScrollEffect={true}
         />
         <Banner sectionName="Contact Us" breadcrumbPath="contact" />
-        <section className="bg-[#eef3f2]">
+        <section className="bg-[#eef3f2] md:px-6 px-4 xl:px-10">
           <div className="text-center pt-20">
             <h2 className="text-4xl font-bold text-(--primary)">Get In Touch With Us</h2>
             <p className="max-w-2xl mx-auto text-md font-[300] mt-4 text-gray-900">
@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
             </p>
           </div>
           <div className=" min-h-screen flex items-center justify-center p-6">
-            <div className="max-w-6xl w-full bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px] mt-10 mb-20">
+            <div className="max-w-7xl w-full bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px] mt-10 mb-20">
               {/* Left Sidebar: Contact Info */}
               <div className="md:w-[40%] bg-gradient-to-br from-[#2fb08f] via-[#c3eee7] to-[#248d72] p-10 md:p-16 text-white relative overflow-hidden flex flex-col justify-between">
                 {/* Decorative Circle Bottom Right */}

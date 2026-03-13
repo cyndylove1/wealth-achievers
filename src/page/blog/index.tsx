@@ -4,6 +4,7 @@ import Newsletter from "../../components/newsletter";
 import Banner from "../../components/banner";
 import Navbar from "../../components/navbar";
 import { Link } from "react-router-dom";
+import Button from "../../components/button";
 
 interface PostProps {
   title: string;
@@ -31,20 +32,26 @@ const BlogPost: React.FC<PostProps> = ({
       </div>
     )}
     <div className="p-8">
-      <h2 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
+      <h2 className="text-2xl font-bold text-(--primary) mb-3 transition-colors">
         {title}
       </h2>
       <p className="text-slate-600 mb-6 line-clamp-2 leading-relaxed">
         {excerpt}
       </p>
       <Link to="why-us">
-        <button className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-orange-400 to-rose-400 text-white font-semibold rounded-full hover:from-orange-500 hover:to-rose-500 transition-all shadow-md hover:shadow-lg mb-8">
-          Read More <ChevronRight size={18} />
-        </button>
+        <div className="mt-8">
+          <Button
+            text="Read More"
+            spanBgColor="bg-white"
+            iconColor="text-(--primary)"
+            bgColor="bg-(--primary)"
+            className="text-white"
+          />
+        </div>
       </Link>
 
       <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-        <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg">
+        <div className="w-12 h-12 rounded-full bg-[#eef3f2] flex items-center justify-center text-gray-900 font-bold text-lg">
           {author[0].toUpperCase()}
         </div>
         <div>
@@ -61,17 +68,14 @@ const BlogPage: React.FC = () => {
     {
       name: "Business Insights",
       icon: <Briefcase size={18} />,
-      color: "bg-emerald-50 text-emerald-700",
     },
     {
       name: "Digital Growth",
       icon: <Rocket size={18} />,
-      color: "bg-amber-50 text-amber-700",
     },
     {
       name: "Strategy & Tech",
       icon: <ShieldCheck size={18} />,
-      color: "bg-purple-50 text-purple-700",
     },
   ];
 
@@ -85,18 +89,17 @@ const BlogPage: React.FC = () => {
         enableScrollEffect={true}
       />
       <Banner sectionName="Our Blog" breadcrumbPath="blog" />
-      <div className="min-h-screen bg-[#fcfaf7] p-6 md:p-12 font-sans">
+      <div className="min-h-screen bg-[#fcfaf7] md:p-6 xl:p-12 p-4 font-sans">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Main Content */}
           <main className="lg:col-span-8 space-y-10">
             <BlogPost
-              title="Building Your Own Business With Wealth Achievers’ Opportunity"
+              title="Building Your Own Business With Wealth Achiever’s Opportunity"
               excerpt="Dreaming of financial independence and the freedom to be your own boss? Discover the path to strategic wealth building."
               author="wealthmary"
               date="June 30, 2025"
               image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1000"
             />
-           
           </main>
 
           {/* Sidebar */}
@@ -104,15 +107,25 @@ const BlogPage: React.FC = () => {
             <section>
               <h3 className="text-3xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 Categories{" "}
-                <span className="h-1 w-12 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full inline-block"></span>
+                <span className="h-1 w-12 bg-(--secondary) rounded-full inline-block"></span>
               </h3>
               <div className="space-y-3">
                 {categories.map((cat) => (
                   <div
                     key={cat.name}
-                    className={`flex items-center gap-3 p-4 rounded-2xl ${cat.color} font-bold cursor-pointer hover:scale-[1.02] transition-transform shadow-sm`}
+                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white font-bold cursor-pointer hover:scale-[1.02] hover:bg-(--primary) transition-all duration-300 shadow-sm"
                   >
-                    {cat.icon} {cat.name}
+                    <div className="flex items-center gap-4">
+                      {/* Icon Container: Turns white on group-hover */}
+                      <div className="bg-(--primary) group-hover:bg-white h-7 w-7 rounded-[2px] flex items-center justify-center text-white group-hover:text-(--primary) transition-colors duration-300">
+                        {cat.icon}
+                      </div>
+
+                      {/* Text: Turns white on group-hover */}
+                      <h3 className="text-slate-700 group-hover:text-white transition-colors duration-300">
+                        {cat.name}
+                      </h3>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -121,13 +134,13 @@ const BlogPage: React.FC = () => {
             <section>
               <h3 className="text-3xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 Tags{" "}
-                <span className="h-1 w-12 bg-gradient-to-r from-orange-400 to-rose-500 rounded-full inline-block"></span>
+                <span className="h-1 w-12 bg-(--secondary) inline-block"></span>
               </h3>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-5 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold shadow-sm border border-slate-100 cursor-pointer hover:bg-slate-800 hover:text-white transition-all"
+                    className="px-5 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold shadow-sm border border-slate-100 cursor-pointer hover:bg-(--primary) hover:text-white transition-all"
                   >
                     {tag}
                   </span>

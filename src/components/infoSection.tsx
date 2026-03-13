@@ -17,7 +17,7 @@ const InfoSection = ({
   isReversed = false,
 }: InfoSectionProps) => {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
+    <div className="max-w-7xl mx-auto md:px-6 xl:px-10 px-4 py-12 md:py-20">
       <div
         className={`flex flex-col md:flex-row items-center justify-evenly md:gap-16 ${isReversed ? "md:flex-row-reverse" : ""}`}
       >

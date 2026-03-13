@@ -47,10 +47,10 @@ export default function FAQ() {
   return (
     <section className="bg-(--primary) py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-center text-4xl font-bold text-white mb-4">
+        <h2 className="text-center md:text-4xl text-2xl font-bold text-white mb-4">
           Frequently Asked Questions
         </h2>
-        <p className="text-center max-w-2xl text-xl text-white font-[300] mx-auto mb-12">
+        <p className="text-center max-w-2xl lg:text-xl md:text-lg text-sm text-white font-[300] mx-auto mb-12">
           most common questions about coverage, claims, and how we protect what
           matters most to you.
         </p>
@@ -67,7 +67,7 @@ export default function FAQ() {
                 {/* Question (Always White) */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex justify-between items-center p-5 bg-white text-[20px] text-gray-900 font-semibold"
+                  className="w-full flex justify-between items-center lg:p-5 p-2 bg-white lg:text-[20px] md:text-[18px] text-[12px] text-gray-900 font-semibold"
                 >
                   {faq.question}
 
@@ -80,7 +80,7 @@ export default function FAQ() {
 
                 {/* Answer (Green when opened) */}
                 <div
-                  className={`bg-(--primary) text-white text-md transition-all duration-500 ease-in-out overflow-hidden
+                  className={`bg-(--primary) text-white lg:text-[18px] md:text-[15px] text-[12px] transition-all duration-500 ease-in-out overflow-hidden
                   ${
                     isOpen
                       ? "max-h-40 opacity-100 px-5 pb-5 pt-2"

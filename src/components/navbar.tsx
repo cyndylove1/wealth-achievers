@@ -47,21 +47,18 @@ export default function Navbar({
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] px-6 py-2 flex justify-between items-center transition-all duration-500 ease-in-out ${activeBg} ${className}`}
+      className={`fixed top-0 left-0 w-full z-[100] md:px-6 xl:px-10 px-4 py-2 flex justify-between items-center transition-all duration-500 ease-in-out ${activeBg} ${className}`}
     >
       {/* Logo Section */}
-      <div className="flex items-center gap-3">
-        <img src="/logo.png" className="w-10" alt="Logo" />
-        <div>
-          <p
-            className={`font-semibold text-lg leading-tight transition-colors ${isScrolled || textColor === "text-white" ? "text-white" : "text-slate-900"}`}
-          >
-            Insurea
-          </p>
-          <p
-            className={`text-[10px] uppercase tracking-wider font-bold transition-colors ${isScrolled || textColor === "text-white" ? "text-white" : "text-gray-500"}`}
-          >
-            Insurance Company
+
+      <div className="flex items-center gap-2">
+        <div className="w-12 h-12 bg-white flex items-center justify-center rounded">
+          <span className="text-2xl text-(---primary) font-black">W</span>
+        </div>
+        <div className="text-white">
+          <h2 className="text-xl font-black leading-none">WEALTH</h2>
+          <p className="text-xs tracking-[0.3em] font-bold opacity-80">
+            ACHIEVERS
           </p>
         </div>
       </div>
