@@ -74,7 +74,7 @@ export default function Hero() {
             <Title text="Wealth Achievers Your Path to Financial Freedom" />
           </AnimatedItem>
           <AnimatedItem index={1} delay={0.1}>
-            <h1 className="xl:text-[52px] md:text-[50px] text-[30px] tracking-tight lg:leading-[60px] leading-[40px] max-w-2xl font-bold text-gray-900">
+            <h1 className="xl:text-[52px] md:text-[50px] text-[30px] tracking-tight md:leading-[60px] leading-[40px] max-w-2xl font-bold text-gray-900">
               Welcome to Wealth Achievers Your Path to&nbsp;
               <span className="relative inline-block">
                 <span className="relative z-10">Financial Freedom</span>

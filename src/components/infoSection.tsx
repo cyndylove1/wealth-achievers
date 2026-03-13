@@ -23,21 +23,21 @@ const InfoSection = ({
       >
         {/* Image Container */}
         <div className="relative flex justify-center">
-          <div className="overflow-hidden rounded-t-full rounded-b-lg w-full h-[420px] relative z-10 shadow-lg">
+          <div className="overflow-hidden rounded-t-full rounded-b-lg w-full md:h-[420px] h-full relative z-10 shadow-lg">
             <img
               src={image}
               alt={title}
-              className="w-[380px] h-full object-cover"
+              className="md:w-[380px] w-full h-full object-cover"
             />
           </div>
         </div>
 
         {/* Text Content */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-2xl md:text-3xl font-semibold text-(--primary)">
+          <h2 className="text-xl md:text-3xl mt-10 lg:mt-0 font-semibold text-(--primary)">
             {title}
           </h2>
-          <p className="text-gray-600 font-light text-[18px] leading-relaxed py-6">
+          <p className="text-gray-600 font-light md:text-[18px] text-[14px] leading-relaxed py-6">
             {description}
           </p>
           <Link to="/consultation">

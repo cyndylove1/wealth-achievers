@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import Title from "./title";
 
 interface FAQItem {
   question: string;
@@ -45,16 +47,21 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-(--primary) py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-center md:text-4xl text-2xl font-bold text-white mb-4">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-center max-w-2xl lg:text-xl md:text-lg text-sm text-white font-[300] mx-auto mb-12">
-          most common questions about coverage, claims, and how we protect what
-          matters most to you.
-        </p>
+    <section className="bg-[#eef3f2]/30 py-24 px-4 md:px-6">
+      <div className="max-w-3xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+           <Title text="Common Questions" />
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="max-w-xl mx-auto text-slate-600 font-light leading-relaxed">
+            Everything you need to know about our financial strategies,
+            mentorship, and how we help you achieve your dreams.
+          </p>
+        </div>
 
+        {/* Accordion List */}
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -62,36 +69,57 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="rounded-lg overflow-hidden border-[2px] border-white"
+                className={`group transition-all duration-300 rounded-2xl border ${
+                  isOpen
+                    ? "bg-white border-[#32b291] shadow-xl shadow-[#32b291]/5"
+                    : "bg-white/50 border-slate-200 hover:border-[#32b291]/50"
+                }`}
               >
-                {/* Question (Always White) */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex justify-between items-center lg:p-5 p-2 bg-white lg:text-[20px] md:text-[18px] text-[12px] text-gray-900 font-semibold"
+                  className="w-full flex justify-between items-center p-5 md:p-6 text-left"
                 >
-                  {faq.question}
-
-                  <ChevronDown
-                    className={`transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
+                  <span
+                    className={`font-bold transition-colors duration-300 md:text-lg ${
+                      isOpen ? "text-[#32b291]" : "text-slate-800"
                     }`}
-                  />
+                  >
+                    {faq.question}
+                  </span>
+                  <div
+                    className={`shrink-0 ml-4 transition-all duration-300 p-1 rounded-full ${
+                      isOpen
+                        ? "bg-[#32b291] text-white rotate-180"
+                        : "bg-slate-100 text-slate-400"
+                    }`}
+                  >
+                    <ChevronDown size={20} />
+                  </div>
                 </button>
 
-                {/* Answer (Green when opened) */}
                 <div
-                  className={`bg-(--primary) text-white lg:text-[18px] md:text-[15px] text-[12px] transition-all duration-500 ease-in-out overflow-hidden
-                  ${
-                    isOpen
-                      ? "max-h-40 opacity-100 px-5 pb-5 pt-2"
-                      : "max-h-0 opacity-0"
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  {faq.answer}
+                  <div className="p-5 md:p-6 pt-0 text-slate-600 leading-relaxed font-light border-t border-slate-50">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Support Call to Action */}
+
+        <div className="mt-12 text-center p-8 rounded-3xl bg-white border border-slate-100 shadow-sm">
+          <p className="text-slate-500 text-sm mb-4">Still have questions?</p>
+          <Link to="/contact">
+            <button className="text-[#32b291] font-bold hover:underline transition-all">
+              Contact our support team &rarr;
+            </button>
+          </Link>
         </div>
       </div>
     </section>

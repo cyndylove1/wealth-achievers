@@ -15,19 +15,19 @@ const Contact: React.FC = () => {
           enableScrollEffect={true}
         />
         <Banner sectionName="Contact Us" breadcrumbPath="contact" />
-        <section className="bg-[#eef3f2] md:px-6 px-4 xl:px-10">
+        <section className="bg-[#eef3f2]/30 md:px-6 px-4 xl:px-10">
           <div className="text-center pt-20">
-            <h2 className="text-4xl font-bold text-(--primary)">Get In Touch With Us</h2>
-            <p className="max-w-2xl mx-auto text-md font-[300] mt-4 text-gray-900">
+            <h2 className="md:text-4xl text-2xl font-bold text-(--primary)">Get In Touch With Us</h2>
+            <p className="max-w-2xl mx-auto tex-sm md:text-md font-[300] mt-4 text-gray-900">
               Take control of your financial future with Wealth Achievers.
               Contact Mary Alabaowo for a free consultation and discover how we
               can help you achieve your dreams.
             </p>
           </div>
-          <div className=" min-h-screen flex items-center justify-center p-6">
-            <div className="max-w-7xl w-full bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px] mt-10 mb-20">
+          <div className="flex items-center justify-center md:p-6">
+            <div className="max-w-7xl w-full bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col lg:flex-row min-h-[600px] mt-10 mb-20">
               {/* Left Sidebar: Contact Info */}
-              <div className="md:w-[40%] bg-gradient-to-br from-[#2fb08f] via-[#c3eee7] to-[#248d72] p-10 md:p-16 text-white relative overflow-hidden flex flex-col justify-between">
+              <div className="lg:w-[60%] bg-gradient-to-br from-[#2fb08f] via-[#c3eee7] to-[#248d72] p-10 md:p-16 text-white relative overflow-hidden flex flex-col justify-between">
                 {/* Decorative Circle Bottom Right */}
                 <div className="absolute -bottom-20 -right-20 w-74 h-74 bg-white/10 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-10 right-10 w-32 h-32 bg-white/20 rounded-full"></div>
@@ -88,9 +88,9 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Right Side: The Form */}
-              <div className="md:w-[60%] p-10 md:p-20 bg-white">
+              <div className="lg:w-[60%] p-6 md:p-20 bg-white">
                 <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 grid-cols-1 ap-4">
                     {/* First Name */}
                     <div className="flex flex-col">
                       <CustomInput
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
                       spanBgColor="bg-white"
                       iconColor="text-(--primary)"
                       bgColor="bg-(--primary)"
-                      className="text-white"
+                      className="text-white w-full"
                     />
                   </div>
                 </form>

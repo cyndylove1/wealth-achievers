@@ -28,7 +28,7 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <section
-      className="relative w-full h-[350px] md:h-[250px] overflow-hidden bg-cover bg-center mt-[8rem]"
+      className="relative w-full md:h-[350px] h-[200px] md:h-[250px] overflow-hidden bg-cover bg-center mt-[6rem]"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* 1. Partial Gradient Overlay */}
@@ -37,7 +37,7 @@ const Banner: React.FC<BannerProps> = ({
       {/* 2. Content Centering */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center text-white">
         {/* Main Title */}
-        <h1 className="text-3xl font-bold tracking-tight md:text-5xl drop-shadow-lg">
+        <h1 className="md:text-3xl text-2xl font-bold tracking-tight md:text-5xl drop-shadow-lg">
           {sectionName}
         </h1>
 

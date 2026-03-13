@@ -29,7 +29,7 @@ const Button: React.FC<CustomButtonProps> = ({
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ scale: 1.05 }} // Scales the entire button on hover
       whileTap={{ scale: 0.98 }} // Slight shrink when clicked
-      className={`${bgColor} px-8 py-2 font-bold rounded-lg flex items-center justify-between gap-4 shadow-lg transition-colors duration-300 hover:shadow-xl ${className}`}
+      className={`${bgColor} px-8 py-2 font-bold rounded-lg flex items-center justify-between gap-4 shadow-lg transition-colors duration-300 hover:shadow-xl justify-center ${className}`}
     >
       <span className="whitespace-nowrap">{text}</span>
 

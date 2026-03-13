@@ -70,7 +70,6 @@ const ServicePage = () => {
             title={section.title}
             description={section.description}
             image={section.image}
-            // This logic alternates the image side (Left for even, Right for odd)
             isReversed={index % 2 !== 0}
           />
         ))}

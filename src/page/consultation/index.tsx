@@ -74,7 +74,7 @@ const Consultation: React.FC = () => {
         breadcrumbPath="consultation"
       />
 
-      <section className="bg-[#eef3f2] py-16 md:px-6 xl:px-10 px-4">
+      <section className="bg-[#eef3f2]/30 py-16 md:px-6 xl:px-10 px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <h3 className="text-(--primary) font-bold text-xl uppercase tracking-wider mb-2">
@@ -94,13 +94,13 @@ const Consultation: React.FC = () => {
             <img
               src={consult}
               alt="Consultation"
-              className="w-full h-[500px] lg:h-[600px] object-cover"
+              className="w-full h-full lg:h-[600px] object-cover"
             />
           </div>
 
           {/* RIGHT SIDE FORM */}
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {/* Full Name */}
               <div className="flex flex-col">
                 <CustomInput
@@ -119,7 +119,7 @@ const Consultation: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {/* phone */}
               <div className="flex flex-col">
                 <CustomInput
@@ -137,7 +137,7 @@ const Consultation: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {/* city */}
               <div className="flex flex-col">
                 <CustomInput
@@ -157,7 +157,7 @@ const Consultation: React.FC = () => {
             </div>
 
             {/* Country */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               <div>
                 <CustomSelect
                   label="Select Country"
@@ -208,7 +208,7 @@ const Consultation: React.FC = () => {
                 spanBgColor="bg-white"
                 iconColor="text-(--primary)"
                 bgColor="bg-(--primary)"
-                className="text-white"
+                className="text-white w-full"
               />
             </div>
           </form>

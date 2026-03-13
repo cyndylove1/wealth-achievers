@@ -31,14 +31,14 @@ const BlogPost: React.FC<PostProps> = ({
         />
       </div>
     )}
-    <div className="p-8">
-      <h2 className="text-2xl font-bold text-(--primary) mb-3 transition-colors">
+    <div className="md:p-8 p-4">
+      <h2 className="md:text-2xl text-xl font-bold text-(--primary) mb-3 transition-colors">
         {title}
       </h2>
       <p className="text-slate-600 mb-6 line-clamp-2 leading-relaxed">
         {excerpt}
       </p>
-      <Link to="why-us">
+      <Link to="/why-us">
         <div className="mt-8">
           <Button
             text="Read More"
@@ -89,7 +89,8 @@ const BlogPage: React.FC = () => {
         enableScrollEffect={true}
       />
       <Banner sectionName="Our Blog" breadcrumbPath="blog" />
-      <div className="min-h-screen bg-[#fcfaf7] md:p-6 xl:p-12 p-4 font-sans">
+
+      <div className="min-h-screen bg-[#eef3f2] md:p-6 xl:px-12 px-4 py-10 font-sans md:py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Main Content */}
           <main className="lg:col-span-8 space-y-10">
@@ -105,7 +106,7 @@ const BlogPage: React.FC = () => {
           {/* Sidebar */}
           <aside className="lg:col-span-4 space-y-12">
             <section>
-              <h3 className="text-3xl font-black text-slate-800 mb-6 flex items-center gap-2">
+              <h3 className="md:text-3xl text-2xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 Categories{" "}
                 <span className="h-1 w-12 bg-(--secondary) rounded-full inline-block"></span>
               </h3>
@@ -132,7 +133,7 @@ const BlogPage: React.FC = () => {
             </section>
 
             <section>
-              <h3 className="text-3xl font-black text-slate-800 mb-6 flex items-center gap-2">
+              <h3 className="md:text-3xl text-2xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 Tags{" "}
                 <span className="h-1 w-12 bg-(--secondary) inline-block"></span>
               </h3>

@@ -22,7 +22,7 @@ const Newsletter: React.FC = () => {
           <Mail className="text-white" size={32} />
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
           Sign Up For Our Newsletter
         </h2>
 

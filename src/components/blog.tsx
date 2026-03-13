@@ -1,6 +1,6 @@
 export default function Blog() {
   return (
-    <section className="bg-[#eef3f2] py-20 px-6">
+    <section className="bg-[#eef3f2] py-20 px-6 mt-10">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h2 className="text-center text-4xl font-bold text-slate-800 mb-10">

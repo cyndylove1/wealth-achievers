@@ -52,10 +52,10 @@ const WhyUs: React.FC = () => {
         enableScrollEffect={true}
       />
       <Banner sectionName="Why Wealth Achievers" breadcrumbPath="why-us" />
-      <div className="bg-[#eef3f2;] min-h-screen p-8 md:p-16">
+      <div className="bg-[#eef3f2;] min-h-screen p-4 md:p-16">
         <div className="max-w-5xl mx-auto text-[#1a364d] font-sans leading-relaxed">
           {/* Intro Paragraph */}
-          <p className="mb-10 text-[1.1rem] font-[400] text-gray-900">
+          <p className="mb-10 md:text-[1.1rem] text-[1rem] font-[400] text-gray-900">
             Dreaming of financial independence and the freedom to be your own
             boss? Wealth Achievers offers a unique business opportunity that
             empowers you to build a financial services business while helping
@@ -65,10 +65,10 @@ const WhyUs: React.FC = () => {
           {/* Mapped Sections (Why Choose / What Sets Us Apart) */}
           {contentSections.map((section, index) => (
             <div key={index} className="mb-10">
-              <h2 className="text-xl font-bold mb-4 text-gray-900">
+              <h2 className="md:text-xl text-lg font-bold mb-4 text-gray-900">
                 {section.title}
               </h2>
-              <p className="text-[1.1rem] font-[300] text-gray-900">
+              <p className="md:text-[1.1rem] text-[1rem] font-[300] text-gray-900">
                 {section.content}
               </p>
             </div>
@@ -76,12 +76,12 @@ const WhyUs: React.FC = () => {
 
           {/* How to Get Started Section */}
           <div>
-            <h2 className="text-xl font-bold mb-6 text-gray-900">
+            <h2 className="md:text-xl text-lg font-bold mb-6 text-gray-900">
               How To Get Started
             </h2>
             <ul className="space-y-2 ml-8 text-gray-900">
               {steps.map((step, index) => (
-                <li key={index} className="list-disc pl-2 text-[1.1rem]">
+                <li key={index} className="list-disc pl-2 md:text-[1.1rem] text-[1rem]">
                   <span className="font-semibold">{step.boldText}:</span>{" "}
                   <span className="font-[300]"> {step.normalText}</span>
                 </li>
