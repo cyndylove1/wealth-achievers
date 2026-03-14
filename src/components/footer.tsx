@@ -16,14 +16,14 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-2">
-              <div className="w-12 h-12 bg-[#32b291] flex items-center justify-center rounded-lg shadow-sm">
-                <span className="text-2xl text-white font-black">W</span>
+              <div className="w-10 h-10 bg-[#32b291] flex items-center justify-center rounded shadow-sm">
+                <span className="text-xl text-white font-black">W</span>
               </div>
               <div className="text-slate-900">
-                <h2 className="text-xl font-black leading-none tracking-tight">
+                <h2 className="text-lg font-black leading-none tracking-tight">
                   WEALTH
                 </h2>
-                <p className="text-[10px] tracking-[0.3em] font-bold opacity-60">
+                <p className="text-[8px] tracking-[0.3em] font-bold opacity-60">
                   ACHIEVERS
                 </p>
               </div>
@@ -49,7 +49,7 @@ export default function Footer() {
             <h3 className="text-lg text-slate-900 font-bold mb-6 border-b-2 border-[#32b291] w-fit">
               Our Services
             </h3>
-            <ul className="space-y-4 text-slate-600 text-sm">
+            <ul className="space-y-3 text-slate-600 text-sm">
               <li className="hover:text-[#32b291] transition-colors cursor-pointer">
                 Insurance Protection
               </li>
@@ -70,7 +70,7 @@ export default function Footer() {
             <h3 className="text-lg text-slate-900 font-bold mb-6 border-b-2 border-[#32b291] w-fit">
               Quick Links
             </h3>
-            <ul className="space-y-4 text-slate-600 text-sm">
+            <ul className="space-y-3 text-slate-600 text-sm">
               <li>
                 <Link to="/" className="hover:text-[#32b291] transition-colors">
                   Home
@@ -116,7 +116,7 @@ export default function Footer() {
             <h3 className="text-lg text-slate-900 font-bold mb-6 border-b-2 border-[#32b291] w-fit">
               Get In Touch
             </h3>
-            <ul className="space-y-4 text-slate-600 text-sm">
+            <ul className="space-y-3 text-slate-600 text-sm">
               <li className="flex gap-3 items-start">
                 <MapPin size={18} className="text-[#32b291] shrink-0" />
                 <span>

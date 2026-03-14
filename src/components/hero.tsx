@@ -4,10 +4,11 @@ import Button from "./button";
 import Navbar from "./navbar";
 import Title from "./title";
 import { AnimatedItem } from "./animatedItem";
+import { PhoneOutgoing } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-full dotted-bg overflow-hidden py-16 overflow-hidden">
+    <section className="relative w-full h-full dotted-bg overflow-hidden pt-16 overflow-hidden">
       {/* RIGHT GREEN BACKGROUND */}
       <div className="absolute right-0 top-0 h-full w-[27%] bg-[#2fb08f] rounded-bl-[500px] overflow-hidden">
         {/* Centered icon container */}
@@ -74,7 +75,7 @@ export default function Hero() {
             <Title text="Wealth Achievers Your Path to Financial Freedom" />
           </AnimatedItem>
           <AnimatedItem index={1} delay={0.1}>
-            <h1 className="xl:text-[52px] md:text-[50px] text-[30px] tracking-tight md:leading-[60px] leading-[40px] max-w-2xl font-bold text-gray-900">
+            <h1 className="xl:text-[52px] md:text-[50px] text-[30px] tracking-tight md:leading-[60px] leading-[40px] max-w-2xl font-medium text-gray-900">
               Welcome to Wealth Achievers Your Path to&nbsp;
               <span className="relative inline-block">
                 <span className="relative z-10">Financial Freedom</span>
@@ -111,23 +112,24 @@ export default function Hero() {
             <div className="absolute xl:left-16 lg:left-6 left-2 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
 
             {/* IMAGE SHAPE (NOT CIRCLE) */}
-            <div className="relative lg:w-[400px] w-full lg:h-[520px] h-[400px] overflow-hidden lg:rounded-t-[250px] rounded-t-[250px] md:rounded-t-[350px] border-[10px] border-white shadow-xl">
+            <div className="relative lg:w-[400px] w-full lg:h-[450px] h-[400px] overflow-hidden lg:rounded-t-[250px] rounded-t-[250px] md:rounded-t-[350px] border-[10px] border-white shadow-xl">
               <img src={hero} className="object-cover w-full h-full" />
             </div>
-
-            {/* VIDEO CARD */}
-            <div className="absolute bottom-0 lg:w-[400px] w-full mt-10 bg-white shadow-xl rounded-md flex items-center overflow-hidden">
-              <div className="p-4 text-sm text-gray-600">
-                What is a happy family like? Watch this video to her their
-                answer.
+            {/* CONSULTATION CARD */}
+            <Link
+              to="/consultation"
+              className="group absolute bottom-0 lg:w-[400px] w-full mt-10 bg-white shadow-xl rounded-md flex items-center justify-between overflow-hidden transition-all duration-300 hover:shadow-2xl"
+            >
+              <div className="p-4 text-sm font-light text-gray-600 leading-tight">
+                Consult Wealth Achievers to help you achieve financial success
               </div>
 
-              <div className="bg-[#2fb08f] w-16 h-16 flex items-center justify-center">
-                <div className="bg-white text-[#2fb08f] w-10 h-10 rounded-full flex items-center justify-center">
-                  ▶
+              <div className="bg-[#2fb08f] w-16 h-16 flex items-center justify-center shrink-0">
+                <div className="bg-white text-[#2fb08f] w-10 h-10 rounded-full flex items-center justify-center transition-transform duration-500 ease-in-out group-hover:scale-125">
+                  <PhoneOutgoing size={18} className="text-[#2fb08f]" />
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </AnimatedItem>
       </div>

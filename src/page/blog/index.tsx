@@ -114,7 +114,7 @@ const BlogPage: React.FC = () => {
                 {categories.map((cat) => (
                   <div
                     key={cat.name}
-                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white font-bold cursor-pointer hover:scale-[1.02] hover:bg-(--primary) transition-all duration-300 shadow-sm"
+                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white font-[500] cursor-pointer hover:scale-[1.02] hover:bg-(--primary) transition-all duration-300 shadow-sm"
                   >
                     <div className="flex items-center gap-4">
                       {/* Icon Container: Turns white on group-hover */}

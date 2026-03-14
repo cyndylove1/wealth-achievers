@@ -25,7 +25,7 @@ export default function About() {
           {/* title */}
           <Title text="About" />
 
-          <h2 className="md:text-3xl text-2xl font-bold leading-snug text-gray-800">
+          <h2 className="md:text-3xl text-2xl font-medium leading-snug text-gray-800">
             A leading financial services platform to&nbsp;
             <span className="relative inline-block">
               <span className="relative z-10">help you</span>
@@ -33,7 +33,7 @@ export default function About() {
             </span>
           </h2>
 
-          <p className="text-gray-500 mt-4 text-md">
+          <p className="text-gray-500 mt-4 text-md font-[300]">
             Wealth Achievers is committed to making financial independence
             accessible to everyone. Founded with a passion for empowering
             individuals and families, we provide personalized financial
@@ -47,7 +47,7 @@ export default function About() {
             <div className="flex gap-3">
               <div>
                 <h4 className="font-bold text-[18px] text-gray-900">Our Mission</h4>
-                <p className="text-gray-500 text-md">
+                <p className="text-gray-500 text-md font-[300]">
                   To empower our community with the tools, knowledge, and
                   opportunities to achieve financial resilience and
                   independence.

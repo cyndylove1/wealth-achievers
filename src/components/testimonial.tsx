@@ -10,6 +10,7 @@ import man2 from "../assets/images/black-man2.png";
 import couple from "../assets/images/smiling-couple.png";
 import { AnimatedItem } from "./animatedItem";
 import Title from "./title";
+import { Star } from "lucide-react";
 
 type Testimonial = {
   quote: string;
@@ -31,7 +32,7 @@ const testimonials: Testimonial[] = [
       "I was overwhelmed with credit card debt until I worked with Wealth Achievers. They created a clear debt management plan that helped me pay off my high-interest balances faster than I thought possible. Their support gave me a fresh start financially.",
     name: "James T.",
     role: "White Marsh, MD",
-    image: woman2,
+    image: man2,
   },
   {
     quote:
@@ -52,7 +53,7 @@ const testimonials: Testimonial[] = [
       "Joining Wealth Achievers’ business opportunity was a game-changer. Their mentorship and system empowered me to build my own financial services business while helping others. I’m proud to be part of a community that values teamwork and success!",
     name: "Aisha K.",
     role: "Philadelphia, PA",
-    image: man2,
+    image: woman2,
   },
 ];
 
@@ -112,13 +113,22 @@ export default function Testimonial() {
                     height={56}
                     className="rounded-full h-[80px] w-[80px] object-cover"
                   />
+                  <div className="flex gap-1 mb-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={16}
+                        className="fill-yellow-500 text-yellow-500"
+                      />
+                    ))}
+                  </div>
                 </div>
                 {/* Quote */}
                 <p className="text-gray-900 font-[300] leading-relaxed text-lg">
                   “{testimonial.quote}”
                 </p>
                 <div className="pt-6 pb-10">
-                  <p className="font-semibold text-(--primary)">
+                  <p className="font-semibold text-gray-900">
                     {testimonial.name}
                   </p>
                   <p className="text-md text-(--primary)">{testimonial.role}</p>

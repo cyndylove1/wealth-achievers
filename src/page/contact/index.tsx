@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
               {/* Right Side: The Form */}
               <div className="lg:w-[60%] p-6 md:p-20 bg-white">
                 <form className="space-y-4">
-                  <div className="grid md:grid-cols-2 grid-cols-1 ap-4">
+                  <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                     {/* First Name */}
                     <div className="flex flex-col">
                       <CustomInput

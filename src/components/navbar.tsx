@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Button from "./button";
 
@@ -40,8 +40,8 @@ export default function Navbar({
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
-  const activeBg = isScrolled ? "bg-[#32b291] shadow-lg" : bgColor;
-  const logoTextColor = isScrolled ? "text-white" : "text-slate-900";
+  const activeBg = isScrolled ? "bg-[#eef3f2] shadow-lg" : bgColor;
+  const logoTextColor = isScrolled ? "text-slate-900" : "text-slate-900";
   const burgerIconColor = isScrolled ? "text-white" : "text-slate-900";
 
   const navLinkStyles = ({ isActive }: { isActive: boolean }) => `
@@ -49,10 +49,10 @@ export default function Navbar({
     ${
       isActive
         ? isScrolled
-          ? "text-white"
+          ? "text-(--primary)"
           : activeTextColor
         : isScrolled
-          ? "text-white"
+          ? "text-(--primary)"
           : textColor
     }
     ${isActive ? "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current" : "hover:opacity-80"}
@@ -96,13 +96,15 @@ export default function Navbar({
         {/* Right Actions */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
-            <Button
-              text="Book Me"
-              bgColor={isScrolled ? "bg-white" : btnBgColor}
-              spanBgColor={isScrolled ? "bg-[#32b291]" : btnSpanBg}
-              iconColor={isScrolled ? "text-white" : btnIcon}
-              className={`${isScrolled ? "text-[#32b291]" : btnTextColor} shadow-md !py-2.5`}
-            />
+            <Link to="/consultation">
+              <Button
+                text="Book Me"
+                bgColor={isScrolled ? "bg-white" : btnBgColor}
+                spanBgColor={isScrolled ? "bg-[#32b291]" : btnSpanBg}
+                iconColor={isScrolled ? "text-white" : btnIcon}
+                className={`${isScrolled ? "text-[#32b291]" : btnTextColor} shadow-md !py-2.5`}
+              />
+            </Link>
           </div>
 
           <button
@@ -179,11 +181,13 @@ export default function Navbar({
           </div>
 
           <div className="mt-auto pb-6">
-            <Button
-              text="Book Me"
-              bgColor="bg-[#32b291]"
-              className="w-full text-white text-lg rounded-2xl shadow-xl shadow-[#32b291]/20"
-            />
+            <Link to="/consultation">
+              <Button
+                text="Book Me"
+                bgColor="bg-[#32b291]"
+                className="w-full text-white text-lg rounded-2xl shadow-xl shadow-[#32b291]/20"
+              />
+            </Link>
           </div>
         </div>
       </div>
