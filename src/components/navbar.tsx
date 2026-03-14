@@ -156,7 +156,7 @@ export default function Navbar({
                   to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) => `
-                  flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 text-xl font-bold
+                  flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 text-md font-semibold
                   ${
                     isActive
                       ? "bg-[#32b291]/10 text-[#32b291] translate-x-2"
@@ -182,7 +182,7 @@ export default function Navbar({
             <Button
               text="Book Me"
               bgColor="bg-[#32b291]"
-              className="w-full py-5 text-white text-xl rounded-2xl shadow-xl shadow-[#32b291]/20"
+              className="w-full text-white text-lg rounded-2xl shadow-xl shadow-[#32b291]/20"
             />
           </div>
         </div>
