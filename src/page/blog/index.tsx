@@ -14,14 +14,8 @@ interface PostProps {
   image?: string;
 }
 
-const BlogPost: React.FC<PostProps> = ({
-  title,
-  excerpt,
-  author,
-  date,
-  image,
-}) => (
-  <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100 group">
+const BlogPost: React.FC<PostProps> = ({ title, excerpt, author, date, image }) => (
+  <div className="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-[#153B5E]/8 group">
     {image && (
       <div className="h-64 overflow-hidden">
         <img
@@ -31,32 +25,30 @@ const BlogPost: React.FC<PostProps> = ({
         />
       </div>
     )}
-    <div className="md:p-8 p-4">
-      <h2 className="md:text-2xl text-xl font-bold text-(--primary) mb-3 transition-colors">
+    <div className="md:p-8 p-5">
+      <h2 className="font-display md:text-2xl text-xl font-bold text-[#153B5E] mb-3 leading-snug">
         {title}
       </h2>
-      <p className="text-slate-600 mb-6 line-clamp-2 leading-relaxed">
+      <p className="text-[#153B5E]/55 mb-6 line-clamp-2 leading-relaxed text-sm font-light">
         {excerpt}
       </p>
       <Link to="/why-us">
-        <div className="mt-8">
-          <Button
-            text="Read More"
-            spanBgColor="bg-white"
-            iconColor="text-(--primary)"
-            bgColor="bg-(--primary)"
-            className="text-white"
-          />
-        </div>
+        <Button
+          text="Read More"
+          bgColor="bg-[#153B5E]"
+          spanBgColor="bg-[#F5A623]"
+          iconColor="text-[#153B5E]"
+          className="text-white"
+        />
       </Link>
 
-      <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-        <div className="w-12 h-12 rounded-full bg-[#eef3f2] flex items-center justify-center text-gray-900 font-bold text-lg">
+      <div className="flex items-center gap-4 pt-6 mt-6 border-t border-[#153B5E]/8">
+        <div className="w-10 h-10 bg-[#153B5E] flex items-center justify-center text-white font-bold text-sm">
           {author[0].toUpperCase()}
         </div>
         <div>
-          <p className="font-bold text-slate-800 leading-none">{author}</p>
-          <p className="text-sm text-slate-500 mt-1">{date}</p>
+          <p className="font-semibold text-[#153B5E] text-sm leading-none">{author}</p>
+          <p className="text-xs text-[#153B5E]/40 mt-1">{date}</p>
         </div>
       </div>
     </div>
@@ -65,18 +57,9 @@ const BlogPost: React.FC<PostProps> = ({
 
 const BlogPage: React.FC = () => {
   const categories = [
-    {
-      name: "Business Insights",
-      icon: <Briefcase size={18} />,
-    },
-    {
-      name: "Digital Growth",
-      icon: <Rocket size={18} />,
-    },
-    {
-      name: "Strategy & Tech",
-      icon: <ShieldCheck size={18} />,
-    },
+    { name: "Business Insights", icon: <Briefcase size={16} /> },
+    { name: "Digital Growth", icon: <Rocket size={16} /> },
+    { name: "Strategy & Tech", icon: <ShieldCheck size={16} /> },
   ];
 
   const tags = ["Business", "Marketing", "Strategy", "Technology", "Analysis"];
@@ -84,18 +67,19 @@ const BlogPage: React.FC = () => {
   return (
     <>
       <Navbar
-        bgColor="bg-white"
-        className="shadow-xl"
+        bgColor="bg-[#FAFBFF]"
+        textColor="text-[#153B5E]"
+        className="shadow-sm"
         enableScrollEffect={true}
       />
       <Banner sectionName="Our Blog" breadcrumbPath="blog" />
 
-      <div className="min-h-screen bg-[#eef3f2] md:p-6 xl:px-12 px-4 py-10 font-sans md:py-20">
+      <div className="min-h-screen bg-[#F1F5FB] md:p-6 xl:px-12 px-4 py-10 md:py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Main Content */}
           <main className="lg:col-span-8 space-y-10">
             <BlogPost
-              title="Building Your Own Business With Wealth Achiever’s Opportunity"
+              title="Building Your Own Business With Wealth Achiever's Opportunity"
               excerpt="Dreaming of financial independence and the freedom to be your own boss? Discover the path to strategic wealth building."
               author="wealthmary"
               date="June 30, 2025"
@@ -106,42 +90,41 @@ const BlogPage: React.FC = () => {
           {/* Sidebar */}
           <aside className="lg:col-span-4 space-y-12">
             <section>
-              <h3 className="md:text-3xl text-2xl font-black text-slate-800 mb-6 flex items-center gap-2">
-                Categories{" "}
-                <span className="h-1 w-12 bg-(--secondary) rounded-full inline-block"></span>
-              </h3>
-              <div className="space-y-3">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="block w-6 h-px bg-[#0DA9A4]" />
+                <h3 className="font-display text-2xl font-bold text-[#153B5E]">
+                  Categories
+                </h3>
+              </div>
+              <div className="space-y-2">
                 {categories.map((cat) => (
                   <div
                     key={cat.name}
-                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white font-bold cursor-pointer hover:scale-[1.02] hover:bg-(--primary) transition-all duration-300 shadow-sm"
+                    className="group flex items-center gap-4 p-4 bg-white cursor-pointer hover:bg-[#153B5E] transition-all duration-300 border border-[#153B5E]/8"
                   >
-                    <div className="flex items-center gap-4">
-                      {/* Icon Container: Turns white on group-hover */}
-                      <div className="bg-(--primary) group-hover:bg-white h-7 w-7 rounded-[2px] flex items-center justify-center text-white group-hover:text-(--primary) transition-colors duration-300">
-                        {cat.icon}
-                      </div>
-
-                      {/* Text: Turns white on group-hover */}
-                      <h3 className="text-slate-700 group-hover:text-white transition-colors duration-300">
-                        {cat.name}
-                      </h3>
+                    <div className="bg-[#0DA9A4] group-hover:bg-[#F5A623] h-7 w-7 flex items-center justify-center text-white group-hover:text-[#153B5E] transition-colors duration-300 shrink-0">
+                      {cat.icon}
                     </div>
+                    <h3 className="text-[#153B5E] group-hover:text-white transition-colors duration-300 font-medium text-sm">
+                      {cat.name}
+                    </h3>
                   </div>
                 ))}
               </div>
             </section>
 
             <section>
-              <h3 className="md:text-3xl text-2xl font-black text-slate-800 mb-6 flex items-center gap-2">
-                Tags{" "}
-                <span className="h-1 w-12 bg-(--secondary) inline-block"></span>
-              </h3>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="block w-6 h-px bg-[#0DA9A4]" />
+                <h3 className="font-display text-2xl font-bold text-[#153B5E]">
+                  Tags
+                </h3>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-5 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold shadow-sm border border-slate-100 cursor-pointer hover:bg-(--primary) hover:text-white transition-all"
+                    className="px-4 py-2 bg-white text-[#153B5E]/60 text-xs font-semibold border border-[#153B5E]/10 cursor-pointer hover:bg-[#153B5E] hover:text-white hover:border-[#153B5E] transition-all"
                   >
                     {tag}
                   </span>

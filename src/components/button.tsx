@@ -13,9 +13,9 @@ interface CustomButtonProps {
 
 const Button: React.FC<CustomButtonProps> = ({
   text,
-  bgColor = "bg-[#32b291]", // Matches Insurea green
-  spanBgColor = "bg-white",
-  iconColor = "text-[#32b291]",
+  bgColor = "bg-[#0DA9A4]",
+  spanBgColor = "bg-[#F5A623]",
+  iconColor = "text-[#153B5E]",
   onClick,
   className,
 }) => {
@@ -24,20 +24,18 @@ const Button: React.FC<CustomButtonProps> = ({
   return (
     <motion.button
       onClick={onClick}
-      // Triggering hover state for the entire button area
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ scale: 1.05 }} // Scales the entire button on hover
-      whileTap={{ scale: 0.98 }} // Slight shrink when clicked
-      className={`${bgColor} px-8 py-2 font-bold rounded-lg flex items-center justify-between gap-4 shadow-lg transition-colors duration-300 hover:shadow-xl justify-center ${className}`}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className={`${bgColor} px-6 py-3 font-semibold text-sm tracking-wide flex items-center gap-3 shadow-md transition-colors duration-300 hover:shadow-lg ${className}`}
     >
       <span className="whitespace-nowrap">{text}</span>
 
       <motion.span
-        // Inner circle scales independently when the parent button is hovered
-        animate={{ scale: isHovered ? 1.15 : 1 }}
+        animate={{ scale: isHovered ? 1.1 : 1 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className={`${spanBgColor} ${iconColor} w-7 h-7 flex items-center justify-center rounded-full overflow-hidden shrink-0`}
+        className={`${spanBgColor} ${iconColor} w-7 h-7 flex items-center justify-center overflow-hidden shrink-0`}
       >
         <AnimatePresence mode="wait">
           {isHovered ? (
@@ -48,7 +46,7 @@ const Button: React.FC<CustomButtonProps> = ({
               exit={{ x: 15, opacity: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
             >
-              <FiArrowRight size={20} />
+              <FiArrowRight size={18} />
             </motion.div>
           ) : (
             <motion.div
@@ -58,7 +56,7 @@ const Button: React.FC<CustomButtonProps> = ({
               exit={{ x: -15, opacity: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
             >
-              <FiArrowUpRight size={20} />
+              <FiArrowUpRight size={18} />
             </motion.div>
           )}
         </AnimatePresence>

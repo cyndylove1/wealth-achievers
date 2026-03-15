@@ -1,15 +1,25 @@
-#root{
-  --primary: #2fb08f;
-  --secondary: #0b1658;
+#root {
+  --color-teal: #0DA9A4;
+  --color-teal-dark: #0b9490;
+  --color-teal-light: #16c7c1;
+  --color-navy: #153B5E;
+  --color-navy-dark: #0f2a44;
+  --color-gold: #F5A623;
+  --color-gold-light: #FFCF6B;
+  --color-cream: #FAFBFF;
+  --color-slate-soft: #F1F5FB;
+
+  /* legacy aliases */
+  --primary: #0DA9A4;
+  --secondary: #153B5E;
 }
 
-.dotted-bg {
-  background-color: #eef3f2;
+body {
+  background-color: #FAFBFF;
+  color: #153B5E;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
 
-  background-image:
-    radial-gradient(rgba(0,0,0,0.15) 0.8px, transparent 0.8px),
-    radial-gradient(rgba(0,0,0,0.15) 0.8px, transparent 0.8px);
-
-  background-size: 22px 22px;
-  background-position: 0 0, 11px 11px;
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }

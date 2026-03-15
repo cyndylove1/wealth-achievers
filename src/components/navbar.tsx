@@ -6,7 +6,6 @@ import Button from "./button";
 interface NavbarProps {
   bgColor?: string;
   textColor?: string;
-  activeTextColor?: string;
   className?: string;
   enableScrollEffect?: boolean;
   btnBgColor?: string;
@@ -17,14 +16,13 @@ interface NavbarProps {
 
 export default function Navbar({
   bgColor = "bg-transparent",
-  textColor = "text-gray-700",
-  activeTextColor = "text-[#32b291]",
+  textColor = "text-[#153B5E]",
   className = "",
   enableScrollEffect = false,
-  btnBgColor = "bg-[#32b291]",
+  btnBgColor = "bg-[#0DA9A4]",
   btnTextColor = "text-white",
-  btnSpanBg = "bg-white",
-  btnIcon,
+  btnSpanBg = "bg-[#F5A623]",
+  btnIcon = "text-[#153B5E]",
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -40,39 +38,30 @@ export default function Navbar({
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
-  const activeBg = isScrolled ? "bg-[#32b291] shadow-lg" : bgColor;
-  const logoTextColor = isScrolled ? "text-white" : "text-slate-900";
-  const burgerIconColor = isScrolled ? "text-white" : "text-slate-900";
+  const activeBg = isScrolled ? "bg-[#FAFBFF] shadow-md" : bgColor;
 
   const navLinkStyles = ({ isActive }: { isActive: boolean }) => `
-    relative py-1 transition-all duration-300 font-bold text-sm
+    relative py-1 transition-all duration-300 font-medium text-sm tracking-wide
     ${
       isActive
-        ? isScrolled
-          ? "text-white"
-          : activeTextColor
-        : isScrolled
-          ? "text-white"
-          : textColor
+        ? "text-[#0DA9A4] after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-px after:bg-[#0DA9A4]"
+        : `${textColor} hover:text-[#0DA9A4]`
     }
-    ${isActive ? "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current" : "hover:opacity-80"}
   `;
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-[100] md:px-6 xl:px-10 px-4 py-2 flex justify-between items-center transition-all duration-500 ease-in-out ${activeBg} ${className}`}
+        className={`fixed top-0 left-0 w-full z-[100] md:px-6 xl:px-10 px-4 py-4 flex justify-between items-center transition-all duration-500 ease-in-out ${activeBg} ${className}`}
       >
-        {/* Main Logo */}
+        {/* Wordmark Logo */}
         <div className="flex items-center gap-2 relative z-[110]">
-          <div className="w-10 h-10 bg-white flex items-center justify-center rounded shadow-sm">
-            <span className="text-xl text-[#32b291] font-black">W</span>
-          </div>
-          <div className={`${logoTextColor} transition-colors duration-500`}>
-            <h2 className="text-lg font-black leading-none uppercase">
+          <span className="w-px h-8 bg-[#0DA9A4]" />
+          <div className="pl-2">
+            <h2 className="font-display text-xl font-bold leading-none tracking-tight uppercase text-[#153B5E]">
               Wealth
             </h2>
-            <p className="text-[8px] tracking-[0.3em] font-bold opacity-80 uppercase">
+            <p className="text-[9px] tracking-[0.35em] font-medium text-[#0DA9A4] uppercase">
               Achievers
             </p>
           </div>
@@ -98,57 +87,57 @@ export default function Navbar({
           <div className="hidden lg:block">
             <Button
               text="Book Me"
-              bgColor={isScrolled ? "bg-white" : btnBgColor}
-              spanBgColor={isScrolled ? "bg-[#32b291]" : btnSpanBg}
-              iconColor={isScrolled ? "text-white" : btnIcon}
-              className={`${isScrolled ? "text-[#32b291]" : btnTextColor} shadow-md !py-2.5`}
+              bgColor={btnBgColor}
+              spanBgColor={btnSpanBg}
+              iconColor={btnIcon}
+              className={`${btnTextColor} !py-2.5`}
             />
           </div>
 
           <button
             onClick={() => setIsOpen(true)}
-            className={`lg:hidden p-2 transition-colors duration-500 ${burgerIconColor}`}
+            className={`lg:hidden p-2 transition-colors duration-500 ${textColor}`}
+            aria-label="Open menu"
           >
-            <Menu size={32} />
+            <Menu size={28} />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[105] transition-opacity duration-500 lg:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-[#153B5E]/70 z-[105] transition-opacity duration-500 lg:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Slide-out Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[380px] bg-white z-[120] shadow-2xl transform transition-transform duration-500 ease-in-out lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-[360px] bg-[#FAFBFF] z-[120] shadow-2xl transform transition-transform duration-500 ease-in-out lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        {/* Header inside menu */}
-        <div className="absolute top-0 left-0 w-full p-6 flex justify-between items-center border-b border-slate-50">
+        {/* Menu Header */}
+        <div className="absolute top-0 left-0 w-full p-6 flex justify-between items-center border-b border-[#153B5E]/10">
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-[#32b291] flex items-center justify-center rounded shadow-sm">
-              <span className="text-lg text-white font-black">W</span>
-            </div>
-            <div className="text-slate-900">
-              <h2 className="text-sm font-black leading-none uppercase">
+            <span className="w-px h-7 bg-[#0DA9A4]" />
+            <div className="pl-2">
+              <h2 className="font-display text-lg font-bold leading-none tracking-tight uppercase text-[#153B5E]">
                 Wealth
               </h2>
-              <p className="text-[7px] tracking-[0.2em] font-bold opacity-60 uppercase">
+              <p className="text-[8px] tracking-[0.3em] font-medium text-[#0DA9A4] uppercase">
                 Achievers
               </p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-slate-900 p-2 hover:bg-slate-50 rounded-full"
+            className="text-[#153B5E] p-2 hover:text-[#0DA9A4] transition-colors"
+            aria-label="Close menu"
           >
-            <X size={28} />
+            <X size={24} />
           </button>
         </div>
 
-        <div className="flex flex-col h-full p-6 pt-32">
-          <div className="flex flex-col gap-2">
+        <div className="flex flex-col h-full p-6 pt-28">
+          <div className="flex flex-col gap-1">
             {["Home", "Services", "Consultation", "Blog", "Contact"].map(
               (item) => (
                 <NavLink
@@ -156,20 +145,15 @@ export default function Navbar({
                   to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) => `
-                  flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 text-xl font-bold
-                  ${
-                    isActive
-                      ? "bg-[#32b291]/10 text-[#32b291] translate-x-2"
-                      : "text-slate-700 hover:bg-slate-50"
-                  }
-                `}
+                    flex items-center gap-4 px-4 py-4 transition-all duration-300 text-lg font-medium border-b border-[#153B5E]/5
+                    ${isActive ? "text-[#0DA9A4]" : "text-[#153B5E] hover:text-[#0DA9A4]"}
+                  `}
                 >
                   {({ isActive }) => (
                     <>
-                      {/* The Dot indicator from your reference image */}
                       <span
-                        className={`h-2 w-2 rounded-full transition-all ${isActive ? "bg-[#32b291] scale-125" : "bg-transparent"}`}
-                      ></span>
+                        className={`h-px w-5 transition-all duration-300 ${isActive ? "bg-[#0DA9A4]" : "bg-transparent"}`}
+                      />
                       {item}
                     </>
                   )}
@@ -181,8 +165,10 @@ export default function Navbar({
           <div className="mt-auto pb-6">
             <Button
               text="Book Me"
-              bgColor="bg-[#32b291]"
-              className="w-full py-5 text-white text-xl rounded-2xl shadow-xl shadow-[#32b291]/20"
+              bgColor="bg-[#0DA9A4]"
+              spanBgColor="bg-[#F5A623]"
+              iconColor="text-[#153B5E]"
+              className="w-full text-white text-base justify-center"
             />
           </div>
         </div>

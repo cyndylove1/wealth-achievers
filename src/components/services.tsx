@@ -1,126 +1,86 @@
-import {
-  GraduationCap,
-  Wallet,
-  Scroll,
-  ShieldCheck,
-  PiggyBank,
-  Rocket,
-} from "lucide-react";
 import { FiArrowRight } from "react-icons/fi";
-import Title from "./title"; // Ensure this component exists
+import Title from "./title";
 import { Link } from "react-router-dom";
 
+const services = [
+  {
+    number: "01",
+    title: "Education Funds & Planning",
+    text: "Secure your family's future with a solid plan for educational expenses — 529 plans and beyond.",
+  },
+  {
+    number: "02",
+    title: "Debt Management",
+    text: "Take control of your finances with structured strategies to eliminate high-interest debt faster.",
+  },
+  {
+    number: "03",
+    title: "Estate Planning",
+    text: "Protect your legacy with comprehensive estate tools — wills, trusts, and wealth transfer.",
+  },
+  {
+    number: "04",
+    title: "Protection & Insurance",
+    text: "Safeguard your family against life's uncertainties with tailored insurance coverage through WFGIA.",
+  },
+  {
+    number: "05",
+    title: "Retirement Accounts",
+    text: "Plan for a retirement that supports your desired lifestyle — IRAs, annuities, and long-term strategies.",
+  },
+  {
+    number: "06",
+    title: "Join the Business",
+    text: "Build your own financial services business through our proven entrepreneurial platform and mentorship system.",
+  },
+];
+
 export default function Services() {
-  const services = [
-    {
-      title: "Education funds and planning",
-      text: "Secure your family’s future with a solid plan for educational expenses.",
-      icon: <GraduationCap size={28} />,
-    },
-    {
-      title: "Debt management",
-      text: "Take control of your finances with effective debt management solutions.",
-      icon: <Wallet size={28} />,
-    },
-    {
-      title: "Estate planning",
-      text: "Protect your legacy with comprehensive estate planning.",
-      icon: <Scroll size={28} />,
-    },
-    {
-      title: "Protection (insurance)",
-      text: "Safeguard your future against life’s uncertainties. As a WFGIA insurance agent",
-      icon: <ShieldCheck size={28} />,
-    },
-    {
-      title: "Retirement accounts",
-      text: "Plan for a retirement that supports your desired lifestyle.",
-      icon: <PiggyBank size={28} />,
-    },
-    {
-      title: "Join The Business",
-      text: "Transform your future with our entrepreneurial platform. Join Wealth Achievers to build your own financial services business.",
-      icon: <Rocket size={28} />,
-    },
-  ];
-
-  // Using the Insurea/Wealth Achievers green color code: #32b291
-  const primaryColor = "#32b291";
-
   return (
-    <section className="bg-[#eef3f2] py-20 md:px-6 xl:px-10 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Badge */}
-        <Title text="Our Services" />
+    <section className="bg-[#FAFBFF] py-24 md:px-6 xl:px-10 px-4 border-t border-[#153B5E]/8">
+      <div className="max-w-6xl mx-auto">
+        {/* Header row */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+          <div>
+            <Title text="Our Services" />
+            <h2 className="font-display text-[44px] md:text-[56px] font-bold text-[#153B5E] leading-[1.05] mt-2 max-w-xl">
+              Personalized solutions for every life stage.
+            </h2>
+          </div>
+          <Link to="/services">
+            <button className="flex items-center gap-2 text-sm font-medium text-[#153B5E]/60 hover:text-[#0DA9A4] transition-colors border-b border-[#153B5E]/20 hover:border-[#0DA9A4] pb-1">
+              View All Services <FiArrowRight size={14} />
+            </button>
+          </Link>
+        </div>
 
-        {/* Heading */}
-        <h2 className="text-2xl md:text-3xl max-w-2xl mx-auto font-bold mt-4 text-slate-900">
-          We offer personalized financial solutions to help you&nbsp;
-          <span className="relative inline-block">
-            <span className="relative z-10">achieve your dreams</span>
-            <span
-              className="absolute left-0 bottom-1 w-full h-3 opacity-40 -z-0"
-              style={{ backgroundColor: primaryColor }}
-            ></span>
-          </span>
-        </h2>
-
-        {/* Cards Grid */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-8 gap-y-12 mt-20">
-          {services.map((service, index) => (
+        {/* Services grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-l border-t border-[#153B5E]/10">
+          {services.map((service) => (
             <div
-              key={index}
-              className="group relative pt-14 pb-8 px-6 rounded-xl shadow-sm transition-all duration-500
-                bg-white text-slate-700 hover:scale-105 hover:shadow-2xl"
-              style={
-                {
-                  // Using a hover style via group-hover classes below instead of direct style for primary color swap
-                }
-              }
+              key={service.number}
+              className="group border-r border-b border-[#153B5E]/10 p-8 hover:bg-[#153B5E] transition-colors duration-300"
             >
-              {/* Icon - Fixed reference to service.icon */}
-              <div
-                className="absolute -top-7 left-1/2 transform -translate-x-1/2
-                w-14 h-14 flex items-center justify-center rounded-full
-                text-white transition-all duration-300 shadow-lg
-                group-hover:bg-white group-hover:shadow-xl"
-                style={{ backgroundColor: primaryColor }}
-              >
-                <div className="group-hover:text-white transition-colors duration-300">
-                  {service.icon}
-                </div>
-              </div>
+              <p className="font-display text-[48px] font-light text-[#153B5E]/12 group-hover:text-white/10 leading-none transition-colors duration-300">
+                {service.number}
+              </p>
 
-              {/* Title */}
-              <h3 className="font-bold text-xl text-slate-900 group-hover:text-[#32b291] transition-colors duration-300">
+              {/* Teal rule — expands on hover */}
+              <div className="w-8 h-px bg-[#0DA9A4] mt-3 mb-4 group-hover:w-12 transition-all duration-300" />
+
+              <h3 className="font-semibold text-[#153B5E] text-[15px] leading-snug group-hover:text-white transition-colors duration-300">
                 {service.title}
               </h3>
 
-              {/* Text - Fixed to use the specific service text */}
-              <p className="text-md mt-4 text-slate-500 leading-relaxed">
+              <p className="text-[#153B5E]/55 text-sm leading-relaxed mt-3 font-light group-hover:text-white/65 transition-colors duration-300">
                 {service.text}
               </p>
 
-              {/* Button */}
-              <Link to="/services" className="inline-block mt-6">
-                <button
-                  className="text-xs font-bold uppercase tracking-wider border-2 py-2.5 px-6 rounded-full flex items-center justify-center gap-2 mx-auto transition-all duration-300"
-                  style={{
-                    borderColor: primaryColor,
-                    color: primaryColor,
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = primaryColor;
-                    e.currentTarget.style.color = "white";
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = primaryColor;
-                  }}
-                >
-                  Read More
-                  <FiArrowRight size={14} />
-                </button>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-1.5 mt-5 text-xs font-semibold tracking-wide uppercase text-[#0DA9A4] group-hover:text-[#16c7c1] hover:gap-2.5 transition-all duration-200"
+              >
+                Learn more <FiArrowRight size={12} />
               </Link>
             </div>
           ))}

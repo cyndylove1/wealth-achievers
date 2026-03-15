@@ -1,72 +1,88 @@
+import { Link } from "react-router-dom";
 import Button from "./button";
 import Title from "./title";
 
+const pillars = [
+  {
+    title: "Our Mission",
+    text: "To empower our community with the tools, knowledge, and opportunities to achieve financial resilience and independence.",
+  },
+  {
+    title: "Our Approach",
+    text: "Personalized strategies built around your life stage, risk tolerance, and long-term vision — not generic templates.",
+  },
+];
+
 export default function About() {
   return (
-    <section className="bg-white py-20 md:px-6 xl:px-10 px-4">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
+    <section className="bg-white py-24 md:px-6 xl:px-10 px-4">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
         {/* Image Section */}
-        <div className="relative flex justify-center">
-          {/* Pattern background */}
-          <div className="absolute xl:left-16 lg:left-6 left-2 top-10 w-30 h-30 bg-[repeating-linear-gradient(135deg,#2fb08f_0,#2fb08f_4px,transparent_4px,transparent_12px)] rounded-lg"></div>
+        <div className="relative">
+          {/* Teal vertical accent */}
+          <div className="absolute left-0 top-10 bottom-10 w-px bg-[#0DA9A4]" />
 
-          {/* Image container */}
-          <div className="overflow-hidden rounded-t-full rounded-b-lg lg:w-[400px] w-full h-[400px] relative z-10 shadow-lg">
+          <div className="overflow-hidden shadow-xl ml-6">
             <img
               src="https://images.unsplash.com/photo-1609220136736-443140cffec6"
-              alt="family"
-              className="w-full h-full object-cover"
+              alt="Family financial planning"
+              className="w-full h-[460px] object-cover"
             />
+          </div>
+
+          {/* Floating stat card */}
+          <div className="absolute bottom-8 right-0 bg-[#0DA9A4] px-6 py-5 shadow-xl">
+            <p className="font-display text-4xl font-bold text-white">10+</p>
+            <p className="text-[10px] tracking-[0.2em] uppercase text-white/70 font-semibold mt-1">
+              Years of expertise
+            </p>
           </div>
         </div>
 
         {/* Text Section */}
         <div>
-          {/* title */}
-          <Title text="About" />
+          <Title text="About Wealth Achievers" />
 
-          <h2 className="md:text-3xl text-2xl font-bold leading-snug text-gray-800">
-            A leading financial services platform to&nbsp;
-            <span className="relative inline-block">
-              <span className="relative z-10">help you</span>
-              <span className="absolute left-0 bottom-1 w-full h-3 bg-(--primary) opacity-40 -z-0"></span>
-            </span>
+          <h2 className="font-display text-[42px] md:text-[50px] font-bold leading-[1.1] text-[#153B5E] mt-2">
+            A leading platform to build lasting{" "}
+            <span className="text-[#0DA9A4]">financial freedom.</span>
           </h2>
 
-          <p className="text-gray-500 mt-4 text-md">
+          <p className="text-[#153B5E]/60 mt-5 text-base leading-relaxed font-light max-w-lg">
             Wealth Achievers is committed to making financial independence
             accessible to everyone. Founded with a passion for empowering
             individuals and families, we provide personalized financial
-            solutions through our affiliation with World Financial Group. Our
-            team, led by Financial Professional Mary Alabaowo, helps clients
-            across North America achieve their goals with confidence.
+            solutions through our affiliation with World Financial Group.
           </p>
 
-          {/* Bullet Points */}
-          <div className="mt-6 space-y-4">
-            <div className="flex gap-3">
-              <div>
-                <h4 className="font-bold text-[18px] text-gray-900">Our Mission</h4>
-                <p className="text-gray-500 text-md">
-                  To empower our community with the tools, knowledge, and
-                  opportunities to achieve financial resilience and
-                  independence.
-                </p>
+          {/* Pillars */}
+          <div className="mt-8 space-y-6">
+            {pillars.map((p, i) => (
+              <div key={i} className="flex gap-4">
+                <span className="block w-px bg-[#0DA9A4] shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-[#153B5E] text-sm tracking-wide">
+                    {p.title}
+                  </h4>
+                  <p className="text-[#153B5E]/55 text-sm leading-relaxed mt-1 font-light">
+                    {p.text}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* Button */}
-          <div className="mt-8">
-            <Button
-              text=" Book Consultation"
-              spanBgColor="bg-white"
-              iconColor="text-(--primary)"
-              bgColor="bg-(--primary)"
-              className="text-white"
-            />
+          <div className="mt-10">
+            <Link to="/consultation">
+              <Button
+                text="Book Consultation"
+                bgColor="bg-[#0DA9A4]"
+                spanBgColor="bg-[#F5A623]"
+                iconColor="text-[#153B5E]"
+                className="text-white"
+              />
+            </Link>
           </div>
-          
         </div>
       </div>
     </section>

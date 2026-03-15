@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Send, Mail } from "lucide-react";
+import { FiArrowRight } from "react-icons/fi";
 
 const Newsletter: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -7,59 +7,68 @@ const Newsletter: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Subscribing:", email);
-    // Add your logic here
   };
 
   return (
-    <section className="relative overflow-hidden py-20 px-6 mb-20">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#2fb08f] via-[#2fb08f] to-[#c3eee7] -z-10" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl -z-10" />
+    <section className="bg-[#153B5E] py-24 px-4 md:px-6 xl:px-10">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        {/* Left — Copy */}
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="block w-6 h-px bg-[#0DA9A4]" />
+            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#0DA9A4]">
+              Newsletter
+            </span>
+          </div>
 
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl mb-8 shadow-xl border border-white/30">
-          <Mail className="text-white" size={32} />
+          <h2 className="font-display text-[44px] md:text-[52px] font-bold text-white leading-[1.05]">
+            Stay informed on your financial future.
+          </h2>
+
+          <p className="text-white/50 text-sm leading-relaxed mt-4 max-w-sm font-light">
+            Receive the latest news, wealth-building strategies, and exclusive
+            insights from Mary Alabaowo — delivered to your inbox.
+          </p>
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
-          Sign Up For Our Newsletter
-        </h2>
-
-        <p className="text-gray-700 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-          Receive the latest news, updates, and exclusive strategic insights
-          delivered straight to your inbox every week.
-        </p>
-
-        <form
-          onSubmit={handleSubmit}
-          className="relative max-w-lg mx-auto group"
-        >
-          <div className="flex flex-col md:flex-row gap-3 p-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-white/50">
-            <div className="relative flex-grow">
+        {/* Right — Form */}
+        <div>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <div className="flex border border-white/15 focus-within:border-[#0DA9A4] transition-colors duration-300">
               <input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Your email address"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-transparent py-4 px-6 text-white placeholder-white outline-none rounded-xl"
+                className="flex-1 bg-transparent py-4 px-5 text-white placeholder-white/30 text-sm outline-none"
               />
+              <button
+                type="submit"
+                className="bg-[#0DA9A4] text-white font-semibold px-6 py-4 text-sm flex items-center gap-2 hover:bg-[#0b9490] transition-colors duration-200 whitespace-nowrap"
+              >
+                Subscribe <FiArrowRight size={16} />
+              </button>
             </div>
 
-            <button
-              type="submit"
-              className="flex items-center justify-center gap-2 bg-white text-(--primary) font-bold px-8 py-4 rounded-xl hover:scale-[1.02] active:scale-95 transition-all duration-200 shadow-lg"
-            >
-              SUBSCRIBE
-              <Send size={18} />
-            </button>
-          </div>
+            <p className="text-white/30 text-xs font-light">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </form>
 
-          <p className="text-gray-700 text-sm mt-4">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
-        </form>
+          <div className="mt-10 pt-10 border-t border-white/8 flex items-center gap-6">
+            <div>
+              <p className="font-display text-2xl font-bold text-white">500+</p>
+              <p className="text-[10px] tracking-widest uppercase text-white/30 font-medium mt-0.5">
+                Subscribers
+              </p>
+            </div>
+            <div className="w-px h-10 bg-white/10" />
+            <p className="text-white/40 text-xs leading-relaxed font-light max-w-[200px]">
+              Join families across North America already achieving their goals.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
