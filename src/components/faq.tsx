@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import Title from "./title";
+import { AnimatedItem } from "./animatedItem";
 
 interface FAQItem {
   question: string;
@@ -51,14 +52,18 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-           <Title text="Common Questions" />
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="max-w-xl mx-auto text-slate-600 font-light leading-relaxed">
-            Everything you need to know about our financial strategies,
-            mentorship, and how we help you achieve your dreams.
-          </p>
+          <Title text="Common Questions" />
+          <AnimatedItem index={0} delay={0.05}>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+          </AnimatedItem>
+          <AnimatedItem index={1} delay={0.10}>
+            <p className="max-w-xl mx-auto text-slate-600 font-light leading-relaxed">
+              Everything you need to know about our financial strategies,
+              mentorship, and how we help you achieve your dreams.
+            </p>
+          </AnimatedItem>
         </div>
 
         {/* Accordion List */}
