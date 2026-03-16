@@ -19,12 +19,12 @@ const Contact: React.FC = () => {
         <section className="bg-[#eef3f2]/30 md:px-6 px-4 xl:px-10">
           <div className="text-center pt-20">
             <AnimatedItem index={0} delay={0.05}>
-              <h2 className="md:text-4xl text-2xl font-bold text-(--primary)">
+              <h2 className="md:text-4xl text-lg font-bold text-(--primary)">
                 Get In Touch With Us
               </h2>
             </AnimatedItem>
             <AnimatedItem index={1} delay={0.15}>
-              <p className="max-w-2xl mx-auto tex-sm md:text-md font-[300] mt-4 text-gray-900">
+              <p className="max-w-2xl mx-auto text-sm md:text-md font-[300] mt-4 text-gray-900">
                 Take control of your financial future with Wealth Achievers.
                 Contact Mary Alabaowo for a free consultation and discover how
                 we can help you achieve your dreams.

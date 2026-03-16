@@ -79,12 +79,12 @@ const Consultation: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <AnimatedItem index={0} delay={0.05}>
-            <h3 className="text-(--primary) font-bold text-xl uppercase tracking-wider mb-2">
+            <h3 className="text-(--primary) font-bold md:text-xl text-lg uppercase tracking-wider mb-2">
               Fill the form below
             </h3>
           </AnimatedItem>
           <AnimatedItem index={1} delay={0.15}>
-            <p className="text-gray-900 font-[300] text-lg max-w-2xl mx-auto">
+            <p className="text-gray-900 font-[300] md:text-lg text-sm max-w-2xl mx-auto">
               Ready to achieve more? Schedule Your Free Consultation Now and
               start building a brighter financial future!
             </p>
