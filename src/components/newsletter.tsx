@@ -11,9 +11,9 @@ const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden py-20 px-6 mb-20">
+    <section className="relative overflow-hidden py-20 px-6 bg-gradient-to-br from-[#2fb08f] via-[#2fb08f] to-[#c3eee7] mb-20">
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#2fb08f] via-[#2fb08f] to-[#c3eee7] -z-10" />
+      <div className="absolute top-0 left-0 w-full h-full -z-10" />
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl -z-10" />
 

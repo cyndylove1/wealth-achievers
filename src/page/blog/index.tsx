@@ -5,6 +5,7 @@ import Banner from "../../components/banner";
 import Navbar from "../../components/navbar";
 import { Link } from "react-router-dom";
 import Button from "../../components/button";
+import { AnimatedItem } from "../../components/animatedItem";
 
 interface PostProps {
   title: string;
@@ -112,22 +113,25 @@ const BlogPage: React.FC = () => {
               </h3>
               <div className="space-y-3">
                 {categories.map((cat) => (
-                  <div
-                    key={cat.name}
-                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white font-[500] cursor-pointer hover:scale-[1.02] hover:bg-(--primary) transition-all duration-300 shadow-sm"
-                  >
-                    <div className="flex items-center gap-4">
-                      {/* Icon Container: Turns white on group-hover */}
-                      <div className="bg-(--primary) group-hover:bg-white h-7 w-7 rounded-[2px] flex items-center justify-center text-white group-hover:text-(--primary) transition-colors duration-300">
-                        {cat.icon}
-                      </div>
+                  <AnimatedItem index={0} delay={0.05}>
+                    {" "}
+                    <div
+                      key={cat.name}
+                      className="group flex items-center gap-3 p-4 rounded-2xl bg-white font-[500] cursor-pointer hover:scale-[1.02] hover:bg-(--primary) transition-all duration-300 shadow-sm"
+                    >
+                      <div className="flex items-center gap-4">
+                        {/* Icon Container: Turns white on group-hover */}
+                        <div className="bg-(--primary) group-hover:bg-white h-7 w-7 rounded-[2px] flex items-center justify-center text-white group-hover:text-(--primary) transition-colors duration-300">
+                          {cat.icon}
+                        </div>
 
-                      {/* Text: Turns white on group-hover */}
-                      <h3 className="text-slate-700 group-hover:text-white transition-colors duration-300">
-                        {cat.name}
-                      </h3>
+                        {/* Text: Turns white on group-hover */}
+                        <h3 className="text-slate-700 group-hover:text-white transition-colors duration-300">
+                          {cat.name}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
+                  </AnimatedItem>
                 ))}
               </div>
             </section>
@@ -139,12 +143,14 @@ const BlogPage: React.FC = () => {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-5 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold shadow-sm border border-slate-100 cursor-pointer hover:bg-(--primary) hover:text-white transition-all"
-                  >
-                    {tag}
-                  </span>
+                  <AnimatedItem index={1} delay={0.15}>
+                    <span
+                      key={tag}
+                      className="px-5 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold shadow-sm border border-slate-100 cursor-pointer hover:bg-(--primary) hover:text-white transition-all"
+                    >
+                      {tag}
+                    </span>
+                  </AnimatedItem>
                 ))}
               </div>
             </section>

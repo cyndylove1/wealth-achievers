@@ -42,7 +42,7 @@ export default function Navbar({
 
   const activeBg = isScrolled ? "bg-[#eef3f2] shadow-lg" : bgColor;
   const logoTextColor = isScrolled ? "text-slate-900" : "text-slate-900";
-  const burgerIconColor = isScrolled ? "text-white" : "text-slate-900";
+  const burgerIconColor = isScrolled ? "text-slate-900" : "text-slate-900";
 
   const navLinkStyles = ({ isActive }: { isActive: boolean }) => `
     relative py-1 transition-all duration-300 font-bold text-sm

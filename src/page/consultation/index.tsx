@@ -5,6 +5,7 @@ import consult from "../../assets/images/hero.jpg"
 import CustomInput from "../../components/input";
 import CustomSelect from "../../components/selectTag";
 import Button from "../../components/button";
+import { AnimatedItem } from "../../components/animatedItem";
 
 
 interface FormData {
@@ -77,14 +78,17 @@ const Consultation: React.FC = () => {
       <section className="bg-[#eef3f2]/30 py-16 md:px-6 xl:px-10 px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="text-(--primary) font-bold text-xl uppercase tracking-wider mb-2">
-            Fill the form below
-          </h3>
-
-          <p className="text-gray-900 font-[300] text-lg max-w-2xl mx-auto">
-            Ready to achieve more? Schedule Your Free Consultation Now and start
-            building a brighter financial future!
-          </p>
+          <AnimatedItem index={0} delay={0.05}>
+            <h3 className="text-(--primary) font-bold text-xl uppercase tracking-wider mb-2">
+              Fill the form below
+            </h3>
+          </AnimatedItem>
+          <AnimatedItem index={1} delay={0.15}>
+            <p className="text-gray-900 font-[300] text-lg max-w-2xl mx-auto">
+              Ready to achieve more? Schedule Your Free Consultation Now and
+              start building a brighter financial future!
+            </p>
+          </AnimatedItem>
         </div>
 
         {/* GRID SECTION */}

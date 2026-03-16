@@ -5,6 +5,7 @@ import Button from "../../components/button";
 import Navbar from "../../components/navbar";
 import Banner from "../../components/banner";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { AnimatedItem } from "../../components/animatedItem";
 
 const Contact: React.FC = () => {
     return (
@@ -17,12 +18,18 @@ const Contact: React.FC = () => {
         <Banner sectionName="Contact Us" breadcrumbPath="contact" />
         <section className="bg-[#eef3f2]/30 md:px-6 px-4 xl:px-10">
           <div className="text-center pt-20">
-            <h2 className="md:text-4xl text-2xl font-bold text-(--primary)">Get In Touch With Us</h2>
-            <p className="max-w-2xl mx-auto tex-sm md:text-md font-[300] mt-4 text-gray-900">
-              Take control of your financial future with Wealth Achievers.
-              Contact Mary Alabaowo for a free consultation and discover how we
-              can help you achieve your dreams.
-            </p>
+            <AnimatedItem index={0} delay={0.05}>
+              <h2 className="md:text-4xl text-2xl font-bold text-(--primary)">
+                Get In Touch With Us
+              </h2>
+            </AnimatedItem>
+            <AnimatedItem index={1} delay={0.15}>
+              <p className="max-w-2xl mx-auto tex-sm md:text-md font-[300] mt-4 text-gray-900">
+                Take control of your financial future with Wealth Achievers.
+                Contact Mary Alabaowo for a free consultation and discover how
+                we can help you achieve your dreams.
+              </p>
+            </AnimatedItem>
           </div>
           <div className="flex items-center justify-center md:p-6">
             <div className="max-w-7xl w-full bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col lg:flex-row min-h-[600px] mt-10 mb-20">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "./button";
+import { AnimatedItem } from "./animatedItem";
 
 interface InfoSectionProps {
   title: string;
@@ -22,33 +23,42 @@ const InfoSection = ({
         }`}
       >
         {/* Image Container */}
-        <div className="relative flex justify-center">
+
+        <div className="relative flex justify-center shrink-0">
           <div className="overflow-hidden rounded-t-full rounded-b-lg w-full md:h-[420px] h-full relative z-10 shadow-lg">
-            <img
-              src={image}
-              alt={title}
-              className="md:w-[380px] w-full h-full object-cover"
-            />
+            <AnimatedItem index={0} delay={0.05}>
+              <img
+                src={image}
+                alt={title}
+                className="md:w-[380px] w-full h-full object-cover"
+              />
+            </AnimatedItem>
           </div>
         </div>
 
         {/* Text Content */}
-        <div className="w-full md:w-1/2">
-          <h2 className="text-xl md:text-3xl mt-10 lg:mt-0 font-semibold text-(--primary)">
-            {title}
-          </h2>
-          <p className="text-gray-600 font-light md:text-[18px] text-[14px] leading-relaxed py-6">
-            {description}
-          </p>
-          <Link to="/consultation">
-            <Button
-              text="Consultation"
-              spanBgColor="bg-white"
-              iconColor="text-(--primary)"
-              bgColor="bg-(--primary)"
-              className="text-white"
-            />
-          </Link>
+        <div className="w-full md:w-1/2 shrink-0">
+          <AnimatedItem index={1} delay={0.15}>
+            <h2 className="text-xl md:text-3xl mt-10 lg:mt-0 font-semibold text-(--primary)">
+              {title}
+            </h2>
+          </AnimatedItem>
+          <AnimatedItem index={2} delay={0.25}>
+            <p className="text-gray-600 font-light md:text-[18px] text-[14px] leading-relaxed py-6">
+              {description}
+            </p>
+          </AnimatedItem>
+          <AnimatedItem index={2} delay={0.25}>
+            <Link to="/consultation">
+              <Button
+                text="Consultation"
+                spanBgColor="bg-white"
+                iconColor="text-(--primary)"
+                bgColor="bg-(--primary)"
+                className="text-white"
+              />
+            </Link>
+          </AnimatedItem>
         </div>
       </div>
     </div>
